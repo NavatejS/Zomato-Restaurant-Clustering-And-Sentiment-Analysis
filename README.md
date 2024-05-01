@@ -22,8 +22,7 @@ Metadata: Metadata of the reviewer
 Time: Date and time of the review
 Pictures: Number of pictures posted with the review
 
-
-## To prepare the Zomato restaurant data for analysis, several preprocessing steps were performed:
+### **To prepare the Zomato restaurant data for analysis, several preprocessing steps were performed:**
 
 Converted object columns to lowercase to ensure uniformity.
 Removed duplicate rows and missing values to clean the dataset.
