@@ -53,12 +53,12 @@ df.shape
 # Dataset Info
 df.info()
 
-"""#### Duplicate Values"""
+#### Duplicate Values
 
 # Dataset Duplicate Value Count
 print("Duplicate values:", df.duplicated().sum())
 
-"""#### Missing Values/Null Values"""
+#### Missing Values/Null Values
 
 # Missing Values/Null Values Count
 print("Missing values:", df.isnull().sum())
@@ -66,24 +66,19 @@ print("Missing values:", df.isnull().sum())
 # Visualizing the missing values
 sns.heatmap(df.isnull(), cbar=False)
 
-"""## ***2. Understanding Your Variables***"""
-
 # Dataset Columns
 df.columns
 
 # Dataset Describe
 df.describe()
 
-"""### Check Unique Values for each variable."""
+### Check Unique Values for each variable
 
 # Check Unique Values for each variable.
 for i in df.columns.tolist():
     print("No. of unique values in ", i, "is", df[i].nunique(), ".")
 
-"""## 3. ***Data Wrangling***
-
 ### Data Wrangling Code
-"""
 
 # Convert object column to lower case
 for col in ['Restaurant', 'Reviewer', 'Review', 'Collections', 'Cuisines']:
@@ -191,8 +186,7 @@ plt.axis('off')
 plt.title('Word Cloud of Reviews')
 plt.show()
 
-"""#### Data Preprocessing
-"""
+#### Data Preprocessing
 
 df['Collections'] = df['Collections'].apply(lambda x: ', '.join(x))
 df['Cuisines'] = df['Cuisines'].apply(lambda x: ', '.join(x))
@@ -203,7 +197,7 @@ df_collections = df['Collections'].str.get_dummies(', ')
 df = pd.concat([df, df_cuisines, df_collections], axis=1)
 df.drop(['Cuisines', 'Collections'], axis=1, inplace=True)
 
-"""#### Text Preprocessing"""
+#### Text Preprocessing
 
 nltk.download('wordnet')
 
@@ -233,19 +227,14 @@ df.reset_index(drop=True, inplace=True)
 
 df_features = df.copy()
 
-"""#### Feature Scaling"""
+#### Feature Scaling
 
 scaler = MinMaxScaler()
 df_features[['Rating', 'n_review', 'n_follow', 'Pictures', 'Cost']] = scaler.fit_transform(df_features[['Rating', 'n_review', 'n_follow', 'Pictures', 'Cost']])
 
 X = df_features.drop(['Restaurant'], axis=1)
 
-"""## ***6. ML Model Implementation***
-
-### ML Model - 1 - **K-Means Clustering**
-
 #### Elbow Method
-"""
 
 inertia = []
 for i in range(1, 11):
@@ -260,7 +249,7 @@ plt.xlabel('Number of clusters')
 plt.ylabel('Inertia')
 plt.show()
 
-"""#### K-Means"""
+### **K-Means**
 
 kmeans = KMeans(n_clusters=6, random_state=100)
 kmeans.fit(X)
@@ -298,7 +287,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-"""### ML Model - 2 - **DBSCAN**"""
+### **DBSCAN**
 
 dbscan = DBSCAN(eps=0.5, min_samples=10)
 dbscan.fit(X)
