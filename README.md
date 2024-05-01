@@ -7,7 +7,7 @@ The dataset consists of Zomato restaurant data, focusing on customer reviews and
 The above dataset has 10000 rows and 12 columns. There are some missing values and 36 duplicates in dataset.
 
 
-**Variables Description:**
+### **Variables Description:**
 
 Name: name of restaurants
 Links: URL Links of the restaurant
