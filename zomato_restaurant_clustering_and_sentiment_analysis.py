@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Zomato Restaurant Clustering And Sentiment Analysis.ipynb
-"""
+# Zomato Restaurant Clustering And Sentiment Analysis.ipynb
+
 
 import re
 
@@ -24,18 +24,13 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-"""### Dataset Loading"""
-
-from google.colab import drive
-drive.mount('/content/drive')
-
 # importing the dataset
 path1 = '/content/drive/My Drive/Data/Zomato Restaurant reviews.xlsx'
 df_reviews = pd.read_excel(path1)
 path2 = '/content/drive/My Drive/Data/Zomato Restaurant names and Metadata.xlsx'
 df_metadata = pd.read_excel(path2)
 
-"""### Dataset First View"""
+### Dataset First View
 
 # Dataset First Look
 df_reviews.head()
@@ -48,7 +43,7 @@ df = pd.merge(df_reviews, df_metadata, on='Restaurant')
 
 df.head()
 
-"""### Dataset Rows & Columns count"""
+### Dataset Rows & Columns count
 
 # Dataset Rows & Columns count
 df.shape
