@@ -10,16 +10,27 @@ The above dataset has 10000 rows and 12 columns. There are some missing values a
 ### **Variables Description:**
 
 Name: name of restaurants
+
 Links: URL Links of the restaurant
+
 Cost: Per person estimated cost of dining
+
 Collections: Tagging of restaurants
+
 Cuisines: Cuisines served by the restaurant
+
 Timings: Restaurant timings
+
 Reviewer: Name of the reviewer
+
 Review: Review text
+
 Rating: Rating provided
+
 Metadata: Metadata of the reviewer
+
 Time: Date and time of the review
+
 Pictures: Number of pictures posted with the review
 
 ### **To prepare the Zomato restaurant data for analysis, several preprocessing steps were performed:**
@@ -31,3 +42,5 @@ Processed 'Cuisines' and 'Collections' columns to remove 'nan' values, split str
 Dropped unnecessary columns such as 'Metadata', 'Timings', 'Time', 'Links', and 'Reviewer'.
 Converted 'Rating', 'n_review', and 'n_follow' columns to appropriate data types (float and integer).
 Replaced 'Like' ratings in the 'Rating' column with the average rating of 3.5.
+
+
